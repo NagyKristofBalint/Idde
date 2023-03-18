@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table, th, td, thead {
+            border: 1px solid black;
+        }
+
+        form {
+            position: absolute;
+            right: 0;
+        }
+    </style>
+    <title>Real estate ads</title>
+</head>
+<body>
+    <main>
+        <h1>Real estate ads</h1>
+        <form action="/idde-server/logout" method="post">
+            <input type="submit" value="Logout">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            {{#each ads}}
+            <tr>
+                <th>{{id}}</th>
+                <th>{{date}}</th>
+                <th>{{description}}</th>
+                <th>{{address}}</th>
+                <th>{{city}}</th>
+                <th>{{price}}</th>
+            </tr>
+            {{/each}}
+        </table>
+    </main>
+</body>
+</html>

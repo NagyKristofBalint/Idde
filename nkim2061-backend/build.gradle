@@ -1,0 +1,29 @@
+plugins {
+    id 'war'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'edu.bbte.idde.nkim2061'
+            artifactId = 'nkim2061-backend'
+            version = '1.0-SNAPSHOT'
+
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    runtimeOnly 'org.hibernate.validator:hibernate-validator:6.0.13.Final'
+    runtimeOnly 'org.glassfish:javax.el:3.0.0'
+
+    runtimeOnly 'mysql:mysql-connector-java:8.0.31'
+    implementation 'com.zaxxer:HikariCP:3.4.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+
+    implementation 'org.slf4j:slf4j-api:2.0.3'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.3'
+}

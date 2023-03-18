@@ -1,0 +1,10 @@
+{
+  "jdbc": {
+    "createTables": true,
+    "driverClass": "com.mysql.cj.jdbc.Driver",
+    "url": "jdbc:mysql://localhost:3306/idde",
+    "user": "root",
+    "password": "jdbcOdbc1234",
+    "poolSize": 4
+  }
+}

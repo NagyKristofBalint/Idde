@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+}
+
+application{
+    mainClassName = 'edu.bbte.idde.nkim2061.desktop.DesktopApplication'
+}
+
+dependencies {
+    implementation project(':nkim2061-backend')
+
+    implementation 'org.slf4j:slf4j-api:2.0.3'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.3'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'edu.bbte.idde.nkim2061'
+            artifactId = 'nkim2061-desktop'
+            version = '1.0-SNAPSHOT'
+
+            from components.java
+        }
+    }
+}
+
+run {
+    standardInput = System.in
+}
